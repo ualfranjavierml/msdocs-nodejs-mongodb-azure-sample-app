@@ -21,13 +21,13 @@ block content
   div(class='row mb-2')
     each task in currentTasks
       div(class='row mb-2')
-        a(class='col-sm-6') #{task.taskName}
-        a(class='col-sm-2') #{format(task.createDate, "yyyy-MM-dd")}
-        a(class='col-sm-2')
+        div(class='col-sm-6') #{task.taskName}
+        div(class='col-sm-2') #{format(task.createDate, "yyyy-MM-dd")}
+        div(class='col-sm-2')
           form(action='./completeTask' method='POST' class='form-registration')
             input(type='hidden' name='_id' value=`${task._id}`)
             button(class='btn btn-primary btn-sm mx-1' type='submit') Complete
-        a(class='col-sm-2')
+        div(class='col-sm-2')
           form(action='./deleteTask' method='POST' class='form-registration')
             input(type='hidden' name='_id' value=`${task._id}`)
             button(class='btn btn-danger btn-sm mx-1') Delete
